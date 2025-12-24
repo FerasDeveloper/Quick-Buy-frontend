@@ -35,8 +35,8 @@ export default function AddProduct() {
     try {
       console.log(formData.get("image")); // يطبع الملف نفسه (File object)
       res = await axios.post(
-        "https://quick-buy-x8r3.onrender.com/api/upload",
-        image,
+        "https://quick-buy-x8r3.onrender.com/api/CreateProduct",
+        formData,
         {
           headers: {
             Authorization: "Bearer " + token,
