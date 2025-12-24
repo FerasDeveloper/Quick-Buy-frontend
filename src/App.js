@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Register from "./Auth/Register/Register";
 import LogIn from "./Auth/LogIn/LogIn";
 import Verification from "./Auth/Register/Verification";
@@ -34,6 +34,7 @@ function App() {
   return (
     <div>
       <Routes>
+          <Route path="/" element={<Navigate to="/register" replace />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/verification-page" element={<Verification />} />
