@@ -45,6 +45,7 @@ export default function ShopHome() {
       .then((res) => {
         setproducts(res.data[0]);
         setLoading(false);
+        console.log(res.data[0]);
       })
       .catch((error) => {
         console.error(error);

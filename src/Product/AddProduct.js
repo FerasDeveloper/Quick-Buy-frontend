@@ -43,6 +43,8 @@ export default function AddProduct() {
           },
         }
       );
+      console.log("data sent" + formData);
+      console.log("data recived" + res.data);
       if (res.data.message === "Product has added Successfully.") {
         nav("/shop-page/home");
       } else {
