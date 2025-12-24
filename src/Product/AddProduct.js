@@ -33,6 +33,7 @@ export default function AddProduct() {
 
     let res = "";
     try {
+      console.log(formData.get("image")); // يطبع الملف نفسه (File object)
       res = await axios.post(
         "https://quick-buy-x8r3.onrender.com/api/CreateProduct",
         formData,
@@ -43,8 +44,7 @@ export default function AddProduct() {
           },
         }
       );
-      console.log("data sent" + formData.image);
-      console.log("data recived" + res.data );
+      console.log("data recived " + res.data);
       if (res.data.message === "Product has added Successfully.") {
         nav("/shop-page/home");
       } else {
