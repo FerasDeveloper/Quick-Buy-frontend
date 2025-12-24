@@ -175,10 +175,10 @@ export default function LogIn() {
             <span>Submit</span>
           </button>
           <div
-            className="d-flex align-items-center justify-content-center"
+            className="mt-3 d-flex align-items-center justify-content-center"
             style={{ fontSize: "12px", fontWeight: "600" }}
           >
-            <p className="mt-3 me-2">Don't have account?</p>
+            <p className="me-2">Don't have account?</p>
             <Link
               to="/register"
               className="link"

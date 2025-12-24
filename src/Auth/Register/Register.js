@@ -909,10 +909,10 @@ export default function Register() {
             <span>Submit</span>
           </button>
           <div
-            className="d-flex align-items-center justify-content-center"
+            className="mt-3 d-flex align-items-center justify-content-center"
             style={{ fontSize: "12px", fontWeight: "600" }}
           >
-            <p className="mt-3 me-2">already have an account?</p>
+            <p className="me-2">already have an account?</p>
             <Link
               to="/login"
               className="link"

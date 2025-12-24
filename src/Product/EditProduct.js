@@ -58,6 +58,13 @@ export default function EditProduct() {
     }
 
     try {
+      console.log("Submitting form data:", {
+        name,
+        description,
+        price,
+        amount,
+        image,
+      });
       const res = await axios.post(
         `https://quick-buy-x8r3.onrender.com/api/EditProduct/${id}`,
         formData,
