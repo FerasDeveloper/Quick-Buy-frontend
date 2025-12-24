@@ -39,8 +39,8 @@ export default function CustomerHome() {
   useEffect(() => {
     setLoading(true);
     const apiEndpoint = showAllProducts
-      ? "http://127.0.0.1:8000/api/ShowProducts"
-      : "http://127.0.0.1:8000/api/ShowFollowingProducts";
+      ? "https://quick-buy-x8r3.onrender.com/api/ShowProducts"
+      : "https://quick-buy-x8r3.onrender.com/api/ShowFollowingProducts";
 
     axios
       .get(apiEndpoint, {
@@ -64,8 +64,8 @@ export default function CustomerHome() {
 
   useEffect(() => {
     const apiEndpoint = showAllProducts
-      ? "http://127.0.0.1:8000/api/Search"
-      : "http://127.0.0.1:8000/api/SearchInFollowingProduct";
+      ? "https://quick-buy-x8r3.onrender.com/api/Search"
+      : "https://quick-buy-x8r3.onrender.com/api/SearchInFollowingProduct";
 
     const searchProducts = async () => {
       try {
@@ -96,7 +96,7 @@ export default function CustomerHome() {
     if (domain !== "") {
       axios
         .post(
-          "http://127.0.0.1:8000/api/SearchInDomains",
+          "https://quick-buy-x8r3.onrender.com/api/SearchInDomains",
           { letters: domain },
           { headers: { Authorization: "Bearer " + token } }
         )
@@ -118,7 +118,7 @@ export default function CustomerHome() {
     if (location !== "") {
       axios
         .post(
-          "http://127.0.0.1:8000/api/SearchInLocations",
+          "https://quick-buy-x8r3.onrender.com/api/SearchInLocations",
           { letters: location },
           { headers: { Authorization: "Bearer " + token } }
         )
@@ -192,7 +192,7 @@ export default function CustomerHome() {
         }
         setLoading(true);
         const response = await axios.post(
-          "http://127.0.0.1:8000/api/CreateOrder",
+          "https://quick-buy-x8r3.onrender.com/api/CreateOrder",
           { products: orderProducts },
           {
             headers: {
@@ -398,7 +398,7 @@ export default function CustomerHome() {
                 </div>
               )}
               <img
-                src={`http://127.0.0.1:8000${product.image}`}
+                src={`https://quick-buy-x8r3.onrender.com${product.image}`}
                 alt={product.name}
                 className="product-image"
               />

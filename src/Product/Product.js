@@ -34,7 +34,7 @@ export default function Product() {
   useEffect(() => {
     try {
       axios
-        .get(`http://127.0.0.1:8000/api/ShowDetails/${id}`, {
+        .get(`https://quick-buy-x8r3.onrender.com/api/ShowDetails/${id}`, {
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -53,7 +53,7 @@ export default function Product() {
   const handleDelete = async () => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/DeleteProduct/${id}`,
+        `https://quick-buy-x8r3.onrender.com/api/DeleteProduct/${id}`,
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -73,7 +73,7 @@ export default function Product() {
   const handleDelete2 = async () => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/DeleteProduct2/${id}`,
+        `https://quick-buy-x8r3.onrender.com/api/DeleteProduct2/${id}`,
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -138,7 +138,7 @@ export default function Product() {
     setshowConfirmation(false);
 
     axios
-      .get(`http://127.0.0.1:8000/api/Report/${id}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/Report/${id}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -158,7 +158,7 @@ export default function Product() {
     setshowConfirmation2(false);
 
     axios
-      .get(`http://127.0.0.1:8000/api/DeleteProduct2/${id}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/DeleteProduct2/${id}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -186,7 +186,7 @@ export default function Product() {
       try {
         setLoading(true);
         axios
-          .get(`http://127.0.0.1:8000/api/IsReported/${id}`, {
+          .get(`https://quick-buy-x8r3.onrender.com/api/IsReported/${id}`, {
             headers: {
               Authorization: "Bearer " + token,
             },
@@ -242,7 +242,7 @@ export default function Product() {
           onClick={() => setIsImageExpanded(true)}
         >
           <img
-            src={`http://127.0.0.1:8000${product.image}`}
+            src={`https://quick-buy-x8r3.onrender.com${product.image}`}
             alt={product.name}
             className="product-image"
           />
@@ -256,7 +256,7 @@ export default function Product() {
           >
             <div className="expanded-image-container">
               <img
-                src={`http://127.0.0.1:8000${product.image}`}
+                src={`https://quick-buy-x8r3.onrender.com${product.image}`}
                 alt={product.name}
                 className="expanded-image"
               />

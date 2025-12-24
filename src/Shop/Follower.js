@@ -16,7 +16,7 @@ export default function Follower() {
     const fetchFollowers = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/ShowFollowers",
+          "https://quick-buy-x8r3.onrender.com/api/ShowFollowers",
           {
             headers: {
               Authorization: "Bearer " + token,

@@ -42,7 +42,7 @@ export default function Register() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/ShowDomains")
+      .get("https://quick-buy-x8r3.onrender.com/api/ShowDomains")
       .then((res) => {
         setAll(res.data);
         setLoading(false);
@@ -137,7 +137,7 @@ export default function Register() {
         setLoading(true);
         try {
           const result = await axios.post(
-            "http://127.0.0.1:8000/api/CreateCustomer",
+            "https://quick-buy-x8r3.onrender.com/api/CreateCustomer",
             {
               username: username,
               F_name: Fname,
@@ -199,7 +199,7 @@ export default function Register() {
         setLoading(true);
         try {
           const result = await axios
-            .post("http://127.0.0.1:8000/api/CreateStore", {
+            .post("https://quick-buy-x8r3.onrender.com/api/CreateStore", {
               username: S_username,
               name: S_name,
               description: S_description,

@@ -17,7 +17,7 @@ export default function OrderDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/ShowMiniOrders/${id}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/ShowMiniOrders/${id}`, {
         headers: {
           Authorization: "Bearer " + token,
         },

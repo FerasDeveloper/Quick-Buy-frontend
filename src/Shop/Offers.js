@@ -25,7 +25,7 @@ export default function Offers() {
   const fetchOffers = () => {
     setLoading(true);
     axios
-      .get("http://127.0.0.1:8000/api/ShowOffers", {
+      .get("https://quick-buy-x8r3.onrender.com/api/ShowOffers", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -61,7 +61,7 @@ export default function Offers() {
     setshowConfirmation1(false);
 
     axios
-      .get(`http://127.0.0.1:8000/api/SelectOffer/${selectedOfferId}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/SelectOffer/${selectedOfferId}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then(() => {
@@ -82,7 +82,7 @@ export default function Offers() {
     setshowConfirmation2(false);
 
     axios
-      .get("http://127.0.0.1:8000/api/CancelOffer", {
+      .get("https://quick-buy-x8r3.onrender.com/api/CancelOffer", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -103,7 +103,7 @@ export default function Offers() {
     setshowConfirmation3(false);
 
     axios
-      .get("http://127.0.0.1:8000/api/RechargeOffer", {
+      .get("https://quick-buy-x8r3.onrender.com/api/RechargeOffer", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {

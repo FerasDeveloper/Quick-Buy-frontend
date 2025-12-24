@@ -17,7 +17,7 @@ export default function Shop_SideBar({ isOpen, toggleSidebar }) {
     try {
       setLoading(true);
       await axios
-        .get("http://127.0.0.1:8000/api/Logout", {
+        .get("https://quick-buy-x8r3.onrender.com/api/Logout", {
           headers: {
             Authorization: "Bearer " + token,
           },

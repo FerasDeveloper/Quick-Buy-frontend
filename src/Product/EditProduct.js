@@ -23,7 +23,7 @@ export default function EditProduct() {
     const fetchProduct = async () => {
       try {
         const res = await axios.get(
-          `http://127.0.0.1:8000/api/ShowDetails/${id}`,
+          `https://quick-buy-x8r3.onrender.com/api/ShowDetails/${id}`,
           {
             headers: {
               Authorization: "Bearer " + token,
@@ -59,7 +59,7 @@ export default function EditProduct() {
 
     try {
       const res = await axios.post(
-        `http://127.0.0.1:8000/api/EditProduct/${id}`,
+        `https://quick-buy-x8r3.onrender.com/api/EditProduct/${id}`,
         formData,
         {
           headers: {

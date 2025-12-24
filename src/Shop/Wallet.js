@@ -15,7 +15,7 @@ export default function Wallet() {
   useEffect(() => {
     try {
       axios
-        .get("http://127.0.0.1:8000/api/ShowWallet", {
+        .get("https://quick-buy-x8r3.onrender.com/api/ShowWallet", {
           headers: {
             Authorization: "Bearer " + token,
           },

@@ -25,7 +25,7 @@ export default function Updates() {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/api/ShowUpdates", {
+      const res = await axios.get("https://quick-buy-x8r3.onrender.com/api/ShowUpdates", {
         headers: { Authorization: "Bearer " + token },
       });
 
@@ -65,7 +65,7 @@ export default function Updates() {
       if (selectedRequest.action === "accept") {
         await axios
           .post(
-            `http://127.0.0.1:8000/api/AcceptRequest/${selectedRequest.id}`,
+            `https://quick-buy-x8r3.onrender.com/api/AcceptRequest/${selectedRequest.id}`,
             {
               domain: targetStore.domain,
             },
@@ -80,7 +80,7 @@ export default function Updates() {
       } else {
         await axios
           .get(
-            `http://127.0.0.1:8000/api/RejectRequest/${selectedRequest.id}`,
+            `https://quick-buy-x8r3.onrender.com/api/RejectRequest/${selectedRequest.id}`,
             { headers: { Authorization: "Bearer " + token } }
           )
           .then((res) => {

@@ -40,7 +40,7 @@ export default function StoreDetails() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://127.0.0.1:8000/api/ShowStoreDetails2/${name}`,
+          `https://quick-buy-x8r3.onrender.com/api/ShowStoreDetails2/${name}`,
           {
             headers: {
               Authorization: "Bearer " + token,
@@ -54,7 +54,7 @@ export default function StoreDetails() {
           setReportCount(res.data.reportsCount);
 
           const blockResponse = await axios.get(
-            `http://127.0.0.1:8000/api/IsBlocked/${res.data[0].id}`,
+            `https://quick-buy-x8r3.onrender.com/api/IsBlocked/${res.data[0].id}`,
             { headers: { Authorization: "Bearer " + token } }
           );
           setIsBlocked(blockResponse.data.success);
@@ -78,7 +78,7 @@ export default function StoreDetails() {
       if (storeDetails.domainId) {
         try {
           const res = await axios.get(
-            `http://127.0.0.1:8000/api/ShowDomain/${storeDetails.domainId}`
+            `https://quick-buy-x8r3.onrender.com/api/ShowDomain/${storeDetails.domainId}`
           );
           setDomain(res.data.name);
         } catch (err) {
@@ -94,7 +94,7 @@ export default function StoreDetails() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/Follow/${storeDetails.id}`,
+        `https://quick-buy-x8r3.onrender.com/api/Follow/${storeDetails.id}`,
         { headers: { Authorization: "Bearer " + token } }
       );
       if (response.data.message) {
@@ -114,7 +114,7 @@ export default function StoreDetails() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/Block/${storeDetails.id}`,
+        `https://quick-buy-x8r3.onrender.com/api/Block/${storeDetails.id}`,
         {
           headers: { Authorization: "Bearer " + token },
         }
@@ -123,13 +123,13 @@ export default function StoreDetails() {
         err_s(response.data.message);
 
         const blockResponse = await axios.get(
-          `http://127.0.0.1:8000/api/IsBlocked/${storeDetails.id}`,
+          `https://quick-buy-x8r3.onrender.com/api/IsBlocked/${storeDetails.id}`,
           { headers: { Authorization: "Bearer " + token } }
         );
         setIsBlocked(blockResponse.data.success);
 
         const res = await axios.get(
-          `http://127.0.0.1:8000/api/ShowStoreDetails/${name}`,
+          `https://quick-buy-x8r3.onrender.com/api/ShowStoreDetails/${name}`,
           { headers: { Authorization: "Bearer " + token } }
         );
         if (res.data[0]) setStoreDetails(res.data[0]);
@@ -153,7 +153,7 @@ export default function StoreDetails() {
     try {
       setLoading(true);
       axios
-        .get(`http://127.0.0.1:8000/api/IsFollowed/${name}`, {
+        .get(`https://quick-buy-x8r3.onrender.com/api/IsFollowed/${name}`, {
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -316,7 +316,7 @@ export default function StoreDetails() {
               }
             >
               <img
-                src={`http://127.0.0.1:8000${product.image}`}
+                src={`https://quick-buy-x8r3.onrender.com${product.image}`}
                 alt={product.name}
                 className="product-image"
               />

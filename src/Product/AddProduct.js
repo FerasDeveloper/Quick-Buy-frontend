@@ -34,7 +34,7 @@ export default function AddProduct() {
     let res = "";
     try {
       res = await axios.post(
-        "http://127.0.0.1:8000/api/CreateProduct",
+        "https://quick-buy-x8r3.onrender.com/api/CreateProduct",
         formData,
         {
           headers: {

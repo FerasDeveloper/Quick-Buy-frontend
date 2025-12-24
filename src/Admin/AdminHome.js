@@ -27,7 +27,7 @@ export default function AdminHome() {
   const fetchStores = () => {
     setLoading(true);
     axios
-      .get("http://127.0.0.1:8000/api/ShowAllStores", {
+      .get("https://quick-buy-x8r3.onrender.com/api/ShowAllStores", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -59,7 +59,7 @@ export default function AdminHome() {
     setShowConfirmation(false);
     setLoading(true);
     axios
-      .get(`http://127.0.0.1:8000/api/DeleteStore/${selectedStoreId}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/DeleteStore/${selectedStoreId}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {

@@ -40,7 +40,7 @@ export default function Verification() {
     setLoading(true);
     try{
     const res = await axios.get(
-      `http://127.0.0.1:8000/api/ResendCode/${username}`
+      `https://quick-buy-x8r3.onrender.com/api/ResendCode/${username}`
     )
     .then((response) => {
       if(response.data.message === 'We have sent the code to your email address'){
@@ -62,7 +62,7 @@ export default function Verification() {
     try {
       const combinedCode = Number(code.join(''));
       const res = await axios.post(
-        `http://127.0.0.1:8000/api/Check/${username}`, {
+        `https://quick-buy-x8r3.onrender.com/api/Check/${username}`, {
           verification_code: combinedCode
         }
       )

@@ -33,8 +33,8 @@ export default function ShopHome() {
   useEffect(() => {
     setLoading(true);
     const apiEndpoint = showAllProducts
-      ? "http://127.0.0.1:8000/api/ShowProducts"
-      : "http://127.0.0.1:8000/api/ShowByOwner";
+      ? "https://quick-buy-x8r3.onrender.com/api/ShowProducts"
+      : "https://quick-buy-x8r3.onrender.com/api/ShowByOwner";
 
     axios
       .get(apiEndpoint, {
@@ -54,8 +54,8 @@ export default function ShopHome() {
 
   useEffect(() => {
     const apiEndpoint = showAllProducts
-      ? "http://127.0.0.1:8000/api/Search"
-      : "http://127.0.0.1:8000/api/SearchInOwnerProduct";
+      ? "https://quick-buy-x8r3.onrender.com/api/Search"
+      : "https://quick-buy-x8r3.onrender.com/api/SearchInOwnerProduct";
 
     const searchProducts = async () => {
       try {
@@ -85,7 +85,7 @@ export default function ShopHome() {
     if (domain !== "") {
       axios
         .post(
-          "http://127.0.0.1:8000/api/SearchInDomains",
+          "https://quick-buy-x8r3.onrender.com/api/SearchInDomains",
           { letters: domain },
           { headers: { Authorization: "Bearer " + token } }
         )
@@ -107,7 +107,7 @@ export default function ShopHome() {
     if (location !== "") {
       axios
         .post(
-          "http://127.0.0.1:8000/api/SearchInLocations",
+          "https://quick-buy-x8r3.onrender.com/api/SearchInLocations",
           { letters: location },
           { headers: { Authorization: "Bearer " + token } }
         )
@@ -290,7 +290,7 @@ export default function ShopHome() {
               }
             > 
               <img
-                src={`http://127.0.0.1:8000${product.image}`}
+                src={`https://quick-buy-x8r3.onrender.com${product.image}`}
                 alt={product.name}
                 className="product-image"
               />

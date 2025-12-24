@@ -29,7 +29,7 @@ export default function LogIn() {
       setLoading(true);
       try {
         const result = await axios
-          .post("http://127.0.0.1:8000/api/LogIn", {
+          .post("https://quick-buy-x8r3.onrender.com/api/LogIn", {
             login_type: logInType,
             password: pass,
           })

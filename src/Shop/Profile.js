@@ -34,7 +34,7 @@ export default function Profile() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/ShowProfile", {
+      .get("https://quick-buy-x8r3.onrender.com/api/ShowProfile", {
         headers: {
           Authorization: "Bearer " + token,
           user_type: user_type,
@@ -59,7 +59,7 @@ export default function Profile() {
         console.error("Error fetching profile:", error);
       });
 
-    axios.get("http://127.0.0.1:8000/api/ShowDomains").then((res) => {
+    axios.get("https://quick-buy-x8r3.onrender.com/api/ShowDomains").then((res) => {
       setAll(res.data);
       setLoading(false);
     });
@@ -97,7 +97,7 @@ export default function Profile() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/EditProfile",
+        "https://quick-buy-x8r3.onrender.com/api/EditProfile",
         {
           name: profileInfo.name,
           description: profileInfo.description,
@@ -128,7 +128,7 @@ export default function Profile() {
 
       // تحديث البيانات بعد الحفظ
       const profileResponse = await axios.get(
-        "http://127.0.0.1:8000/api/ShowProfile",
+        "https://quick-buy-x8r3.onrender.com/api/ShowProfile",
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -174,7 +174,7 @@ export default function Profile() {
   function handleCanel() {
     setIsEditing(false);
     axios
-      .get("http://127.0.0.1:8000/api/ShowProfile", {
+      .get("https://quick-buy-x8r3.onrender.com/api/ShowProfile", {
         headers: {
           Authorization: "Bearer " + token,
         },

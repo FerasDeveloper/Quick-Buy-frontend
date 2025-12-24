@@ -25,7 +25,7 @@ export default function OrderDetails() {
   const fetchOrderDetails = () => {
     setLoading(true);
     axios
-      .get(`http://127.0.0.1:8000/api/ShowMiniOrders/${id}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/ShowMiniOrders/${id}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -56,7 +56,7 @@ export default function OrderDetails() {
     setShowConfirmation(false);
     setLoading(true);
     axios
-      .get(`http://127.0.0.1:8000/api/DeleteMiniOrder/${selectedProduct}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/DeleteMiniOrder/${selectedProduct}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -92,7 +92,7 @@ export default function OrderDetails() {
     setLoading(true);
     
     try{
-    axios.post(`http://127.0.0.1:8000/api/UpdateMiniOrder/${selectedProduct.id}`, 
+    axios.post(`https://quick-buy-x8r3.onrender.com/api/UpdateMiniOrder/${selectedProduct.id}`, 
       { amount: newQuantity },
       {
         headers: { Authorization: "Bearer " + token }

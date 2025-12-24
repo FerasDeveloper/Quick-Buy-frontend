@@ -24,7 +24,7 @@ export default function Order() {
   const fetchOrders = () => {
     setLoading(true);
     axios
-      .get("http://127.0.0.1:8000/api/ShowOrders", {
+      .get("https://quick-buy-x8r3.onrender.com/api/ShowOrders", {
         headers: { Authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -59,7 +59,7 @@ export default function Order() {
     setShowConfirmation(false);
     setLoading(true);
     axios
-      .get(`http://127.0.0.1:8000/api/DeleteOrder/${selectedOrderId}`, {
+      .get(`https://quick-buy-x8r3.onrender.com/api/DeleteOrder/${selectedOrderId}`, {
         headers: { Authorization: "Bearer " + token },
       })
       .then(() => {

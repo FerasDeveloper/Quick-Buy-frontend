@@ -18,7 +18,7 @@ export default function Reports() {
     const fetchReports = () => {
       setLoading(true);
       axios
-        .get("http://127.0.0.1:8000/api/ShowReportedProducts", {
+        .get("https://quick-buy-x8r3.onrender.com/api/ShowReportedProducts", {
           headers: { Authorization: "Bearer " + token },
         })
         .then((res) => {
@@ -57,7 +57,7 @@ export default function Reports() {
             >
               <div className="position-relative">
                 <img
-                  src={`http://127.0.0.1:8000${report.product.image}`}
+                  src={`https://quick-buy-x8r3.onrender.com${report.product.image}`}
                   alt={report.product.name}
                   className="product-image"
                 />
