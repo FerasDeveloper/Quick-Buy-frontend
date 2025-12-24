@@ -242,7 +242,7 @@ export default function Product() {
           onClick={() => setIsImageExpanded(true)}
         >
           <img
-            src={`https://quick-buy-x8r3.onrender.com${product.image}`}
+            src={product.image}
             alt={product.name}
             className="product-image"
           />
@@ -256,7 +256,7 @@ export default function Product() {
           >
             <div className="expanded-image-container">
               <img
-                src={`https://quick-buy-x8r3.onrender.com${product.image}`}
+                src={product.image}
                 alt={product.name}
                 className="expanded-image"
               />

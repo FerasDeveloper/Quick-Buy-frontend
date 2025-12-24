@@ -57,7 +57,7 @@ export default function Reports() {
             >
               <div className="position-relative">
                 <img
-                  src={`https://quick-buy-x8r3.onrender.com${report.product.image}`}
+                  src={report.product.image}
                   alt={report.product.name}
                   className="product-image"
                 />

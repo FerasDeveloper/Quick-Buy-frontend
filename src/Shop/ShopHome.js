@@ -291,7 +291,7 @@ export default function ShopHome() {
               }
             > 
               <img
-                src={`https://quick-buy-x8r3.onrender.com${product.image}`}
+                src={product.image}
                 alt={product.name}
                 className="product-image"
               />
