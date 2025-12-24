@@ -1,0 +1,142 @@
+.add-product-container {
+  min-height: 100vh;
+  background-color: #e4e9f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.product-form {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: calc(.8rem + .8vw) !important;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgb(119, 197, 222);
+}
+
+.product-form label {
+  font-size: calc(.5rem + .5vw);
+  font-weight: 600;
+  color: #34495e;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form textarea,
+.product-form select {
+  padding: 0.875rem;
+  font-size: calc(.5rem + .8vw) !important;
+  border: 2px solid rgb(119, 197, 222) !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.product-form input[type="text"]:focus,
+.product-form input[type="number"]:focus,
+.product-form textarea:focus,
+.product-form select:focus {
+  border-color: rgb(119, 197, 222);
+  box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.2);
+  outline: none;
+}
+
+.product-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: rgb(119, 197, 222);
+  color: white;
+  padding: calc(.5rem + .3vw);
+  border: none;
+  border-radius: 6px;
+  font-size: calc(.5rem + .7vw) !important;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: rgb(99, 177, 202);
+}
+
+/* تنسيق حقل رفع الملف */
+.product-form input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: calc(.3rem + .7vw) !important;
+  border: 2px dashed #cbd5e0;
+  border-radius: 6px;
+  background-color: #f7fafc;
+  margin-bottom: 1.5rem;
+}
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: transparent;
+  cursor: pointer;
+}
+
+.custom-file-input::before {
+  content: 'Choose file';
+  background-color: rgb(119, 197, 222);
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  padding: .5rem;
+}
+
+.custom-file-input:hover::before {
+  background: rgb(99, 177, 202);
+}
+
+.custom-file-input:active::before {
+  background: rgb(42, 130, 159);
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden; /* يخفي الزر الافتراضي في متصفحات WebKit */
+}
+
+.custom-file-input::file-selector-button {
+  visibility: hidden; /* يخفي الزر الافتراضي في متصفحات Firefox */
+}
+
+@media(max-width:500px){
+  .add-product-container form{
+    padding: .8rem !important;
+  }
+  .row{
+    flex-direction: column;
+  }
+  .gap-2.d-flex.flex-column.col-6{
+    width: 100%;
+  }
+  .gap-2.d-flex.flex-column.col-6 input, .product-form textarea{
+    padding: .5rem;
+    margin-bottom: .8rem;
+  }
+}

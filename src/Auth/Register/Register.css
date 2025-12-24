@@ -1,0 +1,565 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Geist Mono", serif;
+}
+
+/* html{
+  margin-right: -33px !important;
+} */
+
+body {
+  overflow-x: hidden;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.RegisterContainer {
+  min-height: 100vh;
+  min-width: 100vw;
+  --s: 200px; /* control the size */
+  --c1: #1d1d1d;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
+}
+
+/* end background */
+
+.RegisterContainer h1 {
+  font-size: calc(1.3rem + 1vw);
+  color: white;
+  cursor: default;
+}
+
+.form {
+  /* min-height: 540px; */
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  right: 25px;
+  width: fit-content;
+  font-weight: bold;
+  transform: skewX(-20deg);
+}
+
+select {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 15px 25px 10px 0;
+}
+
+/*  */
+.slide .customer,
+.slide .store {
+  display: inline-block;
+  font-size: calc(0.6rem + 0.6vw);
+  padding: calc(0.3rem + 0.1vw);
+  cursor: pointer;
+  font-weight: 700;
+  color: white;
+  border: 3px solid rgb(185, 179, 180);
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 1;
+  font-family: inherit;
+}
+.slide .store {
+  border-left-style: none;
+}
+.slide .customer:hover,
+.slide .store:hover {
+  color: black;
+  transition: all 0.3s;
+}
+
+.slide .customer::before,
+.slide .store::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(185, 179, 180);
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.slide .customer:hover::before,
+.slide .store:hover::before {
+  transform: translateX(0);
+}
+
+.CustomerLabel {
+  transition: all 0.3s linear;
+}
+
+/*  */
+.slide .customer {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.slide .store {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.RegisterContainer button {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 1px;
+  font-size: calc(0.6rem + 0.8vw);
+  padding-top: calc(0.2rem + 0.1vw);
+  padding-bottom: calc(0.2rem + 0.1vw);
+  padding-left: calc(0.5rem + 0.3vw);
+  padding-right: calc(0.5rem + 0.3vw);
+  border-radius: 6px;
+}
+
+.customerPage,
+.storePage {
+  transition: all 0.3s linear;
+}
+
+.hide_Customer {
+  /* transform: translateX(-600px); */
+  display: none;
+  transition: all 0.3s linear;
+}
+.show_Customer {
+  /* transform: translateX(0px); */
+  display: block;
+  transition: all 0.3s linear;
+}
+.hide_Store {
+  /* transform: translateX(600px); */
+  display: none;
+  transition: all 0.3s linear;
+}
+.show_Customer {
+  /* transform: translateX(0px); */
+  display: block;
+  transition: all 0.3s linear;
+}
+
+.username,
+.Fname,
+.Lname,
+.email,
+.pass,
+.Rpass,
+.phone,
+.location {
+  position: relative;
+  margin: 20px 0 10px;
+}
+
+.S_username,
+.S_name,
+.S_description,
+.S_email,
+.S_pass,
+.S_Rpass,
+.S_phone,
+.S_location,
+.S_domain {
+  position: relative;
+  margin: 20px 0 10px;
+}
+
+.username i,
+.Fname i,
+.Lname i,
+.email i,
+.pass i,
+.Rpass i,
+.phone i,
+.location i {
+  position: absolute;
+  right: 3px;
+  color: white;
+}
+
+.S_username i,
+.S_name i,
+.S_description i,
+.S_email i,
+.S_pass i,
+.S_Rpass i,
+.S_phone i,
+.S_domain i,
+.S_location i {
+  position: absolute;
+  right: 3px;
+  color: white;
+}
+
+.username input,
+.Fname input,
+.Lname input,
+.email input,
+.pass input,
+.Rpass input,
+.phone input,
+.location input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 25px 10px 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.S_username input,
+.S_name input,
+.S_description input,
+.S_email input,
+.S_pass input,
+.S_Rpass input,
+.S_phone input,
+.S_domain input,
+.S_location input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 25px 10px 0;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.username label,
+.Fname label,
+.Lname label,
+.email label,
+.pass label,
+.Rpass label,
+.phone label,
+.location label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.S_username label,
+.S_name label,
+.S_description label,
+.S_email label,
+.S_pass label,
+.S_Rpass label,
+.S_phone label,
+.S_domain label,
+.S_location label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.username label span,
+.Fname label span,
+.Lname label span,
+.email label span,
+.pass label span,
+.Rpass label span,
+.phone label span,
+.location label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.S_username label span,
+.S_name label span,
+.S_description label span,
+.S_email label span,
+.S_pass label span,
+.S_Rpass label span,
+.S_phone label span,
+.S_domain label span,
+.S_location label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #fff;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.username input:focus,
+.username input:valid,
+.Fname input:focus,
+.Fname input:valid,
+.Lname input:focus,
+.Lname input:valid,
+.email input:focus,
+.email input:valid,
+.pass input:focus,
+.pass input:valid,
+.Rpass input:focus,
+.Rpass input:valid,
+.phone input:focus,
+.phone input:valid,
+.location input:focus,
+.location input:valid {
+  outline: 0;
+  border-bottom-color: rgb(119, 197, 222);
+}
+
+.S_username input:focus,
+.S_username input:valid,
+.S_name input:focus,
+.S_name input:valid,
+.S_description input:focus,
+.S_description input:valid,
+.S_email input:focus,
+.S_email input:valid,
+.S_pass input:focus,
+.S_pass input:valid,
+.S_Rpass input:focus,
+.S_Rpass input:valid,
+.S_phone input:focus,
+.S_phone input:valid,
+.S_domain input:focus,
+.S_domain input:valid,
+.S_location input:focus,
+.S_location input:valid {
+  outline: 0;
+  border-bottom-color: rgb(119, 197, 222);
+}
+
+.username input:focus + label span,
+.username input:not(:placeholder-shown) + label span,
+.Fname input:focus + label span,
+.Fname input:not(:placeholder-shown) + label span,
+.Lname input:focus + label span,
+.Lname input:not(:placeholder-shown) + label span,
+.email input:focus + label span,
+.email input:not(:placeholder-shown) + label span,
+.pass input:focus + label span,
+.pass input:not(:placeholder-shown) + label span,
+.Rpass input:focus + label span,
+.Rpass input:not(:placeholder-shown) + label span,
+.phone input:focus + label span,
+.phone input:not(:placeholder-shown) + label span,
+.location input:focus + label span,
+.location input:not(:placeholder-shown) + label span {
+  color: rgb(119, 197, 222);
+  transform: translateY(-25px);
+}
+
+.S_username input:focus + label span,
+.S_username input:not(:placeholder-shown) + label span,
+.S_name input:focus + label span,
+.S_name input:not(:placeholder-shown) + label span,
+.S_description input:focus + label span,
+.S_description input:not(:placeholder-shown) + label span,
+.S_email input:focus + label span,
+.S_email input:not(:placeholder-shown) + label span,
+.S_pass input:focus + label span,
+.S_pass input:not(:placeholder-shown) + label span,
+.S_Rpass input:focus + label span,
+.S_Rpass input:not(:placeholder-shown) + label span,
+.S_phone input:focus + label span,
+.S_phone input:not(:placeholder-shown) + label span,
+.S_domain input:focus + label span,
+.S_domain input:not(:placeholder-shown) + label span,
+.S_location input:focus + label span,
+.S_location input:not(:placeholder-shown) + label span {
+  color: rgb(119, 197, 222);
+  transform: translateY(-25px);
+}
+
+.username input:placeholder-shown:not(:focus) + label span,
+.Fname input:placeholder-shown:not(:focus) + label span,
+.Lname input:placeholder-shown:not(:focus) + label span,
+.email input:placeholder-shown:not(:focus) + label span,
+.pass input:placeholder-shown:not(:focus) + label span,
+.Rpass input:placeholder-shown:not(:focus) + label span,
+.phone input:placeholder-shown:not(:focus) + label span,
+.location input:placeholder-shown:not(:focus) + label span {
+  color: white;
+  transform: translateY(0px);
+}
+
+.S_username input:placeholder-shown:not(:focus) + label span,
+.S_name input:placeholder-shown:not(:focus) + label span,
+.S_description input:placeholder-shown:not(:focus) + label span,
+.S_email input:placeholder-shown:not(:focus) + label span,
+.S_pass input:placeholder-shown:not(:focus) + label span,
+.S_Rpass input:placeholder-shown:not(:focus) + label span,
+.S_phone input:placeholder-shown:not(:focus) + label span,
+.S_domain input:placeholder-shown:not(:focus) + label span,
+.S_location input:placeholder-shown:not(:focus) + label span {
+  color: white;
+  transform: translateY(0px);
+}
+
+.username input:placeholder-shown:not(:focus),
+.Fname input:placeholder-shown:not(:focus),
+.Lname input:placeholder-shown:not(:focus),
+.email input:placeholder-shown:not(:focus),
+.pass input:placeholder-shown:not(:focus),
+.Rpass input:placeholder-shown:not(:focus),
+.phone input:placeholder-shown:not(:focus),
+.location input:placeholder-shown:not(:focus) {
+  border-bottom-color: white;
+}
+
+.S_username input:placeholder-shown:not(:focus),
+.S_name input:placeholder-shown:not(:focus),
+.S_description input:placeholder-shown:not(:focus),
+.S_email input:placeholder-shown:not(:focus),
+.S_pass input:placeholder-shown:not(:focus),
+.S_Rpass input:placeholder-shown:not(:focus),
+.S_phone input:placeholder-shown:not(:focus),
+.S_domain input:placeholder-shown:not(:focus),
+.S_location input:placeholder-shown:not(:focus) {
+  border-bottom-color: white;
+}
+
+.col-5-5 {
+  width: 50% !important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 5px;
+}
+
+.col-5 {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 5px;
+}
+
+.username:focus-within i,
+.Fname:focus-within i,
+.Lname:focus-within i,
+.email:focus-within i,
+.pass:focus-within i,
+.Rpass:focus-within i,
+.phone:focus-within i,
+.location:focus-within i {
+  color: rgb(119, 197, 222);
+}
+
+.S_username:focus-within i,
+.S_name:focus-within i,
+.S_description:focus-within i,
+.S_email:focus-within i,
+.S_pass:focus-within i,
+.S_Rpass:focus-within i,
+.S_phone:focus-within i,
+.S_domain:focus-within i,
+.S_location:focus-within i {
+  color: rgb(119, 197, 222);
+}
+
+/* Submit Button */
+button.mt-5 {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: rgba(12, 193, 253, 0.8);
+  color: ghostwhite;
+}
+
+button.mt-5 span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+button.mt-5:hover span {
+  color: black;
+}
+
+button.mt-5::before,
+button.mt-5::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+button.mt-5::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.85);
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+button.mt-5:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+/* End Submit Button */
+
+
+a:-webkit-any-link:hover{
+  color: white !important;
+}
+
+@media (max-width: 474px) {
+  .col-5-5 {
+    width: 100% !important;
+  }
+}

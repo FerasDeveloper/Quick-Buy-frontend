@@ -1,0 +1,215 @@
+
+.store-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: calc(1rem + .5vw);
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.store-info p, .domain-section label {
+  font-size: calc(.6rem + .7vw);
+  font-weight: 500;
+}
+
+.domain-section label{
+  position: relative;
+  margin-top: 5px;
+}
+
+.domain-section input {
+  width: 110%;
+  font-size: calc(.4rem + .7vw) !important;
+  color: rgb(119, 197, 222);
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  top: 3px;
+  padding: calc(.2rem + .2vw) calc(.3rem + .2vw);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.store-info span {
+  font-size: calc(.5rem + .7vw);
+  font-weight: 700;
+  color: rgb(119, 197, 222);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.domain-section {
+  position: relative;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: calc(.45rem + .5vw);
+}
+
+.updates-container button {
+  padding: calc(.2rem + .2vw) calc(.4rem + .5vw);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.accept-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.reject-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.saving-indicator {
+  color: #666;
+  font-size: 0.8em;
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+input:disabled {
+  background-color: #f5f5f5;
+}
+
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-popup {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-popup h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.domain-input {
+  margin: 1rem 0;
+}
+
+.domain-input label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.domain-input input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirm-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover,
+.cancel-btn:hover {
+  opacity: 0.9;
+} 
+
+.domain-preview {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+.domain-preview code {
+  display: block;
+  padding: 8px;
+  background: white;
+  border: 1px solid #eee;
+  margin-top: 5px;
+  word-break: break-all;
+}
+
+.no-requests {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.no-requests p {
+  margin: 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+@media(max-width: 450px){
+  .domain-section label {
+    margin-top: 0px;
+  }
+  .domain-section input {
+    width: 75%;
+  }
+}
+@media(max-width: 450px){
+  .cont {
+    width: 80% !important;
+  }
+  .store-card {
+    flex-direction: column;
+  }
+  .actions {
+    margin-top: .4rem;
+    flex-direction: row;
+  }
+  .domain-section input{
+    width: 60%;
+  }
+}

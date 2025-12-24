@@ -1,0 +1,266 @@
+.order-details-container {
+  min-height: 100vh;
+  padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e4e9f7;
+}
+
+.order-details-container .products-list {
+  background: white;
+  border-radius: 10px;
+  padding: calc(1.5rem + 1vw) calc(1rem + 1vw);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-container .order-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: calc(0.8rem + 1.5vw);
+}
+
+.order-details-container .product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(0.5rem + 0.5vw) calc(1rem + 1vw);
+  margin: 1rem 0;
+  background-color: #e4e9f7;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.order-details-container .product-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-details-container .product-name {
+  font-weight: 600;
+  color: #34495e;
+  font-size: calc(0.6rem + 1vw);
+}
+
+.order-details-container .product-quantity {
+  background-color: #3498db;
+  color: white;
+  padding: calc(0.2rem + 0.3vw) calc(0.5rem + 0.5vw);
+  font-size: calc(0.5rem + 0.7vw);
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.order-details-container .error-message {
+  text-align: center;
+  padding: 2rem;
+  color: #e74c3c;
+  font-weight: 500;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تأكيد الحذف */
+.order-details-container .confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.order-details-container .confirmation-popup {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.order-details-container .confirmation-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.order-details-container .confirm-button,
+.order-details-container .cancel-button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* تعديلات على عناصر المنتج */
+.order-details-container .product-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.product-item::before {
+  content: attr(data);
+  position: absolute;
+  bottom: -8px;
+  left: 5px;
+  color: white;
+  font-weight: 600;
+  padding: 1px 7px;
+  font-size: calc(.3rem + .7vw);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.product-item:hover::before {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.product-item[data="not Received"]::before {
+  background: #ff4444;
+}
+
+.product-item[data="Pending"]::before {
+  background: #3498db;
+}
+
+.product-item[data="Received"]::before {
+  background: #2ecc71;
+}
+
+.order-details-container .delete-btnn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 0.5rem;
+  right: 0;
+  top: 50%;
+  transform: translate(calc(0.6rem + 0.7vw), -50%);
+  transition: color 0.2s;
+  position: absolute;
+}
+
+.order-details-container .delete-btnn:hover {
+  color: #c0392b;
+}
+
+.order-details-container .delete-btnn i {
+  font-size: calc(0.6rem + 1.1vw);
+}
+
+/* زر التعديل العائم */
+.order-details-container .floating-edit-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #3498db;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.order-details-container .floating-edit-btn:hover {
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+/* تعديلات على مودال التعديل */
+.order-details-container .edit-form {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-details-container .edit-form label {
+  font-weight: 500;
+  color: #34495e;
+}
+
+.order-details-container .edit-form input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* تكييف أنماط التأكيد الموجودة */
+.order-details-container .confirmation-popup h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* أزرار التحكم */
+.order-details-container .product-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.order-details-container .action-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.products-list .edit-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #3498db;
+  transition: all 0.2s;
+}
+
+.products-list .edit-btn:hover {
+  color: #2980b9;
+  background: rgb(119, 197, 222);
+}
+
+/* نافذة تعديل الكمية */
+.order-details-container .edit-quantity input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.order-details-container .edit-quantity input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.confirmation-buttonss .confirm-button, .confirmation-buttonss .cancel-button{
+  width: 48%;
+}
+
+.confirmation-buttonss .confirm-button{
+  background: rgba(0, 128, 0, 0.598);
+}
+
+.confirmation-buttonss .confirm-button:hover{
+  background: rgba(0, 128, 0, 0.865);
+}

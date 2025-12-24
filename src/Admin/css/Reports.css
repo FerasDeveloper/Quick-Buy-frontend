@@ -1,0 +1,38 @@
+.report-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.product-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.badge-danger { background-color: #e74c3c; }
+.badge-warning { background-color: #f1c40f; }
+.badge-success { background-color: #2ecc71; }
+
+/* Updates.css */
+.td {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.td p {
+  margin: 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: inline-block;
+}

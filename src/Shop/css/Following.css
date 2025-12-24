@@ -1,0 +1,103 @@
+/* زر المتابعة */
+.follow-btn {
+  padding: calc(.2rem + .5vw) calc(.4rem + 1vw);
+  border: none;
+  border-radius: 25px;
+  background-color: rgb(119, 197, 222);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: calc(.5rem + .8vw);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.follow-btn:hover {
+  background-color: rgb(99, 177, 202);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.follow-btn.following {
+  background-color: #28a745;
+}
+
+.follow-btn.following:hover {
+  background-color: #218838;
+}
+
+.follow-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* أيقونات */
+.follow-btn .icon {
+  font-size: calc(.5rem + .8vw);
+}
+
+/* نافذة التأكيد */
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-popup {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.confirmation-popup p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.confirmation-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.confirm-button, .cancel-button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.confirm-button {
+  background-color: rgba(0, 128, 0, 0.642);
+  color: white;
+}
+
+.confirm-button:hover {
+  background-color: rgba(0, 128, 0, 0.887);
+}
+
+.cancel-button {
+  background-color: #6c757db3;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+}
