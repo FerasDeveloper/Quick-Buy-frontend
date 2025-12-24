@@ -69,7 +69,7 @@ export default function EditProduct() {
         }
       );
       if (res.data.message === "Product Edited Successfully.") {
-        nav(`/shop-page/product/${id}`);
+        window.location.replace(`/product/${id}`);
       } else {
         err_m(res.data.message);
       }
