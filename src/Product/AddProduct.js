@@ -44,7 +44,7 @@ export default function AddProduct() {
           },
         }
       );
-      console.log("data recived " + res.data);
+      console.log("data recived " + res.data.message);
       if (res.data.message === "Product has added Successfully.") {
         nav("/shop-page/home");
       } else {
